@@ -48,17 +48,17 @@ public class UnionResourceConnection extends ResourceConnection {
 	}
 
 	@Override
-	public boolean exists() throws IOException {
+	public boolean exists() throws IOException, IllegalStateException {
 		return wrapped.exists();
 	}
 
 	@Override
-	public long getLength() throws IOException, FileNotFoundException {
+	public long getLength() throws IOException, FileNotFoundException, IllegalStateException {
 		return wrapped.getLength();
 	}
 
 	@Override
-	public long getLastModified() throws IOException, FileNotFoundException {
+	public long getLastModified() throws IOException, FileNotFoundException, IllegalStateException {
 		return wrapped.getLastModified();
 	}
 
@@ -68,9 +68,10 @@ public class UnionResourceConnection extends ResourceConnection {
 	}
 
 	@Override
-	public ResourceFile getResourceFile() throws IOException, FileNotFoundException {
+	public ResourceFile getResourceFile() throws IOException, FileNotFoundException, IllegalStateException {
 		return wrapped.getResourceFile();
 	}
+
 
 	@Override
 	public void close() throws IOException {
