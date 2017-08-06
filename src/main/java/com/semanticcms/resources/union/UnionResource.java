@@ -120,6 +120,9 @@ public class UnionResource extends Resource {
 	 * Returns {@link #open()} from a resource that {@link #exists()}.
 	 * If no resource exists, returns {@link #open()} from the last resource where did exist,
 	 * or the first resource if never found.
+	 * <p>
+	 * TODO: Have an affinity for local-file resources like done in {@link #getFile()}?
+	 * </p>
 	 */
 	@Override
 	public UnionResourceConnection open() throws IOException {

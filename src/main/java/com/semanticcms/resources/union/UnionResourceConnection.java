@@ -24,7 +24,7 @@ package com.semanticcms.resources.union;
 
 import com.semanticcms.core.resources.Resource;
 import com.semanticcms.core.resources.ResourceConnection;
-import com.semanticcms.core.resources.ResourceFile;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -68,10 +68,9 @@ public class UnionResourceConnection extends ResourceConnection {
 	}
 
 	@Override
-	public ResourceFile getResourceFile() throws IOException, FileNotFoundException, IllegalStateException {
-		return wrapped.getResourceFile();
+	public File getFile() throws IOException, FileNotFoundException, IllegalStateException {
+		return wrapped.getFile();
 	}
-
 
 	@Override
 	public void close() throws IOException {
