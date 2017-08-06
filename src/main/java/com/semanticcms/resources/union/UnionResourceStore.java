@@ -22,6 +22,7 @@
  */
 package com.semanticcms.resources.union;
 
+import com.aoindustries.util.AoCollections;
 import com.semanticcms.core.resources.Resource;
 import com.semanticcms.core.resources.ResourceStore;
 import java.util.ArrayList;
@@ -75,9 +76,15 @@ public class UnionResourceStore implements ResourceStore {
 	}
 
 	private final ResourceStore[] stores;
+	private final List<ResourceStore> unmodifiableStores;
 
 	private UnionResourceStore(ResourceStore[] stores) {
 		this.stores = stores;
+		this.unmodifiableStores = AoCollections.optimalUnmodifiableList(Arrays.asList(stores));
+	}
+
+	public List<ResourceStore> getStores() {
+		return unmodifiableStores;
 	}
 
 	@Override
