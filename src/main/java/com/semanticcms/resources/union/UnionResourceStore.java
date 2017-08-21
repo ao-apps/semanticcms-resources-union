@@ -22,6 +22,7 @@
  */
 package com.semanticcms.resources.union;
 
+import com.aoindustries.net.Path;
 import com.aoindustries.util.AoCollections;
 import com.semanticcms.core.resources.Resource;
 import com.semanticcms.core.resources.ResourceStore;
@@ -104,7 +105,7 @@ public class UnionResourceStore implements ResourceStore {
 	 *            If none exist, returns {@link EmptyResource}
 	 */
 	@Override
-	public UnionResource getResource(String path) {
+	public UnionResource getResource(Path path) {
 		Resource[] resources = new Resource[stores.length];
 		for(int i = 0; i < stores.length; i++) {
 			resources[i] = stores[i].getResource(path);

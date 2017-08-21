@@ -22,6 +22,7 @@
  */
 package com.semanticcms.resources.union;
 
+import com.aoindustries.net.Path;
 import com.semanticcms.core.resources.Resource;
 import com.semanticcms.core.resources.ResourceConnection;
 import java.io.File;
@@ -57,7 +58,7 @@ public class UnionResource extends Resource {
 	/**
 	 * @param stores  A defensive copy is made
 	 */
-	public UnionResource(UnionResourceStore store, String path, Resource[] resources) {
+	public UnionResource(UnionResourceStore store, Path path, Resource[] resources) {
 		super(store, path);
 		if(resources.length == 0) throw new IllegalArgumentException("At least one resource required");
 		this.resources = Arrays.copyOf(resources, resources.length);
