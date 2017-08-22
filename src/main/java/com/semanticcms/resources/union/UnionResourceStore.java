@@ -101,6 +101,17 @@ public class UnionResourceStore implements ResourceStore {
 	}
 
 	/**
+	 * Available when all stores are available.
+	 */
+	@Override
+	public boolean isAvailable() {
+		for(ResourceStore store : stores) {
+			if(!store.isAvailable()) return false;
+		}
+		return true;
+	}
+
+	/**
 	 * @implSpec  Searches all stores in-order, returning the first one that {@link Resource#exists() exists}.
 	 *            If none exist, returns {@link EmptyResource}
 	 */
