@@ -73,6 +73,9 @@ public class UnionResource extends Resource {
 	 * Returns {@link #isFilePreferred()} from a resource that {@link #exists()}.
 	 * If no resource exists, returns {@link #isFilePreferred()} from the last resource where did exist,
 	 * or the first resource if never found.
+	 * <p>
+	 * TODO: This should be made consistent with implementation of {@link #getFile()} below.
+	 * </p>
 	 */
 	@Override
 	public boolean isFilePreferred() throws IOException {
@@ -90,21 +93,24 @@ public class UnionResource extends Resource {
 
 	/**
 	 * Returns {@link #getFile()} from a resource that {@link #exists()} and returns non-null from {@link #getFile()}.
-	 * If no resource exists and returns non-null, returns the first non-null result of {@link #getFile()} in
+	 * If doesn't exist on any resource, returns the first non-null result of {@link #getFile()} in
 	 * order of {@link #resources}.
 	 * Finally returns {@code null} if no non-null results found.
 	 */
 	@Override
 	public File getFile() throws IOException {
 		final int startIndex = lastExistsIndex;
+		boolean hasExists = false;
 		File lowestIndexFile = null;
 		int lowestIndex = 0;
 		int i = startIndex;
 		do {
 			Resource resource = resources[i];
+			boolean exists = resource.exists();
+			if(exists) hasExists = true;
 			File file = resource.getFile();
 			if(file != null) {
-				if(resource.exists()) {
+				if(exists) {
 					if(i != startIndex) lastExistsIndex = startIndex;
 					return file;
 				}
@@ -114,7 +120,7 @@ public class UnionResource extends Resource {
 				}
 			}
 		} while((i = (i + 1) % resources.length) != startIndex);
-		return lowestIndexFile;
+		return hasExists ? null : lowestIndexFile;
 	}
 
 	/**
