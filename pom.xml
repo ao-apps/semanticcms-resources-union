@@ -57,21 +57,19 @@ along with semanticcms-resources-union.  If not, see <http://www.gnu.org/license
 		<profile>
 			<id>release</id>
 			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId>
-							<configuration>
-								<links>
-									<link>${javac.link.javaApi}</link>
-									<link>https://aoindustries.com/ao-lang/apidocs/</link>
-									<link>https://aoindustries.com/ao-net-types/apidocs/</link>
-									<link>https://semanticcms.com/core/resources/apidocs/</link>
-								</links>
-							</configuration>
-						</plugin>
-					</plugins>
-				</pluginManagement>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId><artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<links>
+								<link>${javac.link.javaApi}</link>
+								<link>https://aoindustries.com/ao-lang/apidocs</link>
+								<link>https://aoindustries.com/ao-net-types/apidocs</link>
+								<link>https://semanticcms.com/core/resources/apidocs</link>
+							</links>
+						</configuration>
+					</plugin>
+				</plugins>
 			</build>
 		</profile>
 	</profiles>
