@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 semanticcms-resources-union - Combines multiple sets of SemanticCMS resources.
-Copyright (C) 2017, 2018  AO Industries, Inc.
+Copyright (C) 2017, 2018, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -40,7 +40,7 @@ along with semanticcms-resources-union.  If not, see <http://www.gnu.org/license
 		<description.html><![CDATA[Combines multiple sets of <a target="_top" href="https://semanticcms.com/resources/">SemanticCMS resources</a>..]]></description.html>
 	</properties>
 
-	<name>SemanticCMS Resources Union</name>
+	<name>SemanticCMS 2 Resources Union</name>
 	<url>https://semanticcms.com/resources/union/</url>
 	<description>Combines multiple sets of SemanticCMS resources.</description>
 	<inceptionYear>2017</inceptionYear>
