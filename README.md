@@ -10,8 +10,8 @@
 		<img src="https://semanticcms.com/ao-badges/packaging-developmental.svg" alt="packaging: developmental" />
 	</a>
 	<br />
-	<a href="https://docs.oracle.com/javase/6/docs/api/">
-		<img src="https://semanticcms.com/ao-badges/java-6.svg" alt="java: &gt;= 6" />
+	<a href="https://docs.oracle.com/javase/7/docs/api/">
+		<img src="https://semanticcms.com/ao-badges/java-7.svg" alt="java: &gt;= 7" />
 	</a>
 	<a href="http://semver.org/spec/v2.0.0.html">
 		<img src="https://semanticcms.com/ao-badges/semver-2.0.0.svg" alt="semantic versioning: 2.0.0" />
