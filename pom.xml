@@ -63,9 +63,9 @@ along with semanticcms-resources-union.  If not, see <http://www.gnu.org/license
 						<configuration>
 							<links>
 								<link>${javac.link.javaApi}</link>
-								<link>https://aoindustries.com/ao-lang/apidocs</link>
-								<link>https://aoindustries.com/ao-net-types/apidocs</link>
-								<link>https://semanticcms.com/core/resources/apidocs</link>
+								<link>https://aoindustries.com/ao-lang/apidocs/</link>
+								<link>https://aoindustries.com/ao-net-types/apidocs/</link>
+								<link>https://semanticcms.com/core/resources/apidocs/</link>
 							</links>
 						</configuration>
 					</plugin>
