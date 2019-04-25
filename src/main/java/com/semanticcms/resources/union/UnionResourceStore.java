@@ -1,6 +1,6 @@
 /*
  * semanticcms-resources-union - Combines multiple sets of SemanticCMS resources.
- * Copyright (C) 2017  AO Industries, Inc.
+ * Copyright (C) 2017, 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -37,7 +37,7 @@ import java.util.Map;
  */
 public class UnionResourceStore implements ResourceStore {
 
-	private static final Map<List<ResourceStore>,UnionResourceStore> unionStores = new HashMap<List<ResourceStore>,UnionResourceStore>();
+	private static final Map<List<ResourceStore>,UnionResourceStore> unionStores = new HashMap<>();
 
 	/**
 	 * Gets the union store representing the given set of stores, creating a new store only as-needed.
@@ -46,7 +46,7 @@ public class UnionResourceStore implements ResourceStore {
 	 * @param stores  A defensive copy is made
 	 */
 	public static UnionResourceStore getInstance(ResourceStore ... stores) {
-		return getInstance(new ArrayList<ResourceStore>(Arrays.asList(stores)));
+		return getInstance(new ArrayList<>(Arrays.asList(stores)));
 	}
 
 	/**
@@ -56,7 +56,7 @@ public class UnionResourceStore implements ResourceStore {
 	 * @param stores  Iterated once only.
 	 */
 	public static UnionResourceStore getInstance(Iterable<ResourceStore> stores) {
-		List<ResourceStore> list = new ArrayList<ResourceStore>();
+		List<ResourceStore> list = new ArrayList<>();
 		for(ResourceStore store : stores) list.add(store);
 		return getInstance(list);
 	}
