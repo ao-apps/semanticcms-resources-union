@@ -39,5 +39,4 @@ along with semanticcms-resources-union.  If not, see <http://www.gnu.org/license
 		datePublished="2017-08-04T20:46:30-0500"
 		dateModified="${ao:getLastModified('index.html')}"
 	/>
-	<!-- TODO: Pick-up javadocs version, not pom version, in title, here and elsewhere -->
 </jsp:root>
