@@ -1,6 +1,6 @@
 /*
  * semanticcms-resources-union - Combines multiple sets of SemanticCMS resources.
- * Copyright (C) 2017, 2019  AO Industries, Inc.
+ * Copyright (C) 2017, 2019, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -112,8 +112,12 @@ public class UnionResourceStore implements ResourceStore {
 	}
 
 	/**
-	 * @implSpec  Searches all stores in-order, returning the first one that {@link Resource#exists() exists}.
-	 *            If none exist, returns {@link EmptyResource}
+	 * {@inheritDoc}
+	 * <p>
+	 * Implementation Note:
+	 * Searches all stores in-order, returning the first one that {@link Resource#exists() exists}.
+	 * If none exist, returns {@link EmptyResource}
+	 * </p>
 	 */
 	@Override
 	public UnionResource getResource(Path path) {

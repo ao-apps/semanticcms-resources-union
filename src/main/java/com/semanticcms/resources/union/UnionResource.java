@@ -1,6 +1,6 @@
 /*
  * semanticcms-resources-union - Combines multiple sets of SemanticCMS resources.
- * Copyright (C) 2017  AO Industries, Inc.
+ * Copyright (C) 2017, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -56,7 +56,7 @@ public class UnionResource extends Resource {
 	private volatile int lastExistsIndex;
 
 	/**
-	 * @param stores  A defensive copy is made
+	 * @param store  A defensive copy is made
 	 */
 	public UnionResource(UnionResourceStore store, Path path, Resource[] resources) {
 		super(store, path);
