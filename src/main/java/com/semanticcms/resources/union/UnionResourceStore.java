@@ -111,14 +111,6 @@ public class UnionResourceStore implements ResourceStore {
 		return true;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * Implementation Note:
-	 * Searches all stores in-order, returning the first one that {@link Resource#exists() exists}.
-	 * If none exist, returns {@link EmptyResource}
-	 * </p>
-	 */
 	@Override
 	public UnionResource getResource(Path path) {
 		Resource[] resources = new Resource[stores.length];
