@@ -35,8 +35,6 @@ along with semanticcms-resources-union.  If not, see <http://www.gnu.org/license
 	<properties>
 		<!-- These values are copied from the project being documented -->
 		<documented.artifactId>semanticcms-resources-union</documented.artifactId>
-		<documented.javaVersion>1.8</documented.javaVersion>
-		<documented.javac.link.javaApi>${javac.link.javaApi.jdk8}</documented.javac.link.javaApi>
 		<documented.name>SemanticCMS Resources Union²</documented.name>
 		<documented.shortTitle>Union</documented.shortTitle>
 		<documented.description>Combines multiple sets of SemanticCMS resources.</documented.description>

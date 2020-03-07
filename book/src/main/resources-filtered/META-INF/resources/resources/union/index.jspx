@@ -45,7 +45,7 @@ along with semanticcms-resources-union.  If not, see <http://www.gnu.org/license
 				arg.projectStatus="alpha"
 				arg.managementStatus="preview"
 				arg.packagingStatus="developmental"
-				arg.javaVersion="@{documented.javaVersion}"
+				arg.javaseVersion="@{documented.javase.version}"
 				arg.semanticVersioning="2.0.0"
 				arg.license="lgpl-3.0"
 			/>
