@@ -22,8 +22,8 @@
  */
 package com.semanticcms.resources.union;
 
+import com.aoindustries.collections.AoCollections;
 import com.aoindustries.net.Path;
-import com.aoindustries.util.AoCollections;
 import com.semanticcms.core.resources.Resource;
 import com.semanticcms.core.resources.ResourceStore;
 import java.util.ArrayList;
