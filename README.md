@@ -27,7 +27,7 @@ Combines multiple sets of [SemanticCMS resources](https://github.com/aoindustrie
 * [Project Home](https://semanticcms.com/resources/union/)
 * [Changelog](https://semanticcms.com/resources/union/changelog)
 * [API Docs](https://semanticcms.com/resources/union/apidocs/)
-* [Maven Central Repository](https://search.maven.org/#search%7Cgav%7C1%7Cg:%22com.semanticcms%22%20AND%20a:%22semanticcms-resources-union%22)
+* [Maven Central Repository](https://search.maven.org/artifact/com.semanticcms/semanticcms-resources-union)
 * [GitHub](https://github.com/aoindustries/semanticcms-resources-union)
 
 ## Contact Us
