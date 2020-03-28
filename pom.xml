@@ -53,6 +53,11 @@ along with semanticcms-resources-union.  If not, see <http://www.gnu.org/license
 		<tag>HEAD</tag>
 	</scm>
 
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/aoindustries/semanticcms-resources-union/issues</url>
+	</issueManagement>
+
 	<profiles>
 		<profile>
 			<id>release</id>
