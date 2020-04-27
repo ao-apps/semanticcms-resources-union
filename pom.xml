@@ -70,7 +70,7 @@ along with semanticcms-resources-union.  If not, see <http://www.gnu.org/license
 								<!-- Direct -->
 								<link>https://aoindustries.com/ao-collections/apidocs/</link>
 								<link>https://aoindustries.com/ao-net-types/apidocs/</link>
-								<link>https://semanticcms.com/core/resources/apidocs/</link>
+								<!-- TODO: Once published: <link>https://semanticcms.com/core/resources/apidocs/</link> -->
 							</links>
 						</configuration>
 					</plugin>
