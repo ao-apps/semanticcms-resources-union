@@ -57,7 +57,9 @@ public class UnionResourceStore implements ResourceStore {
 	 */
 	public static UnionResourceStore getInstance(Iterable<ResourceStore> stores) {
 		List<ResourceStore> list = new ArrayList<>();
-		for(ResourceStore store : stores) list.add(store);
+		for(ResourceStore store : stores) {
+			list.add(store);
+		}
 		return getInstance(list);
 	}
 
@@ -84,6 +86,7 @@ public class UnionResourceStore implements ResourceStore {
 		this.unmodifiableStores = AoCollections.optimalUnmodifiableList(Arrays.asList(stores));
 	}
 
+	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
 	public List<ResourceStore> getStores() {
 		return unmodifiableStores;
 	}
