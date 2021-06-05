@@ -1,6 +1,6 @@
 /*
  * semanticcms-resources-union - Combines multiple sets of SemanticCMS resources.
- * Copyright (C) 2017, 2020  AO Industries, Inc.
+ * Copyright (C) 2017, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,7 +22,7 @@
  */
 package com.semanticcms.resources.union;
 
-import com.aoindustries.net.Path;
+import com.aoapps.net.Path;
 import com.semanticcms.core.resources.Resource;
 import com.semanticcms.core.resources.ResourceConnection;
 import java.io.File;
