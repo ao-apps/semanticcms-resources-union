@@ -33,6 +33,7 @@ along with semanticcms-resources-union.  If not, see <http://www.gnu.org/license
 	<packaging>bundle</packaging>
 
 	<properties>
+		<module.name>com.semanticcms.resources.union</module.name>
 		<javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a>
 / <a target="${javadoc.target}" href="https://semanticcms.com/resources/">Resources</a>
 / <a target="${javadoc.target}" href="${project.url}">Union</a>]]></javadoc.breadcrumbs>
