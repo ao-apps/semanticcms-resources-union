@@ -71,20 +71,20 @@ along with semanticcms-resources-union.  If not, see <http://www.gnu.org/license
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/aoindustries/semanticcms-resources-union.git</connection>
-		<developerConnection>scm:git:git@github.com:aoindustries/semanticcms-resources-union.git</developerConnection>
-		<url>https://github.com/aoindustries/semanticcms-resources-union</url>
+		<connection>scm:git:git://github.com/ao-apps/semanticcms-resources-union.git</connection>
+		<developerConnection>scm:git:git@github.com:ao-apps/semanticcms-resources-union.git</developerConnection>
+		<url>https://github.com/ao-apps/semanticcms-resources-union</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/aoindustries/semanticcms-resources-union/issues</url>
+		<url>https://github.com/ao-apps/semanticcms-resources-union/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>GitHub Actions</system>
-		<url>https://github.com/aoindustries/semanticcms-resources-union/actions</url>
+		<url>https://github.com/ao-apps/semanticcms-resources-union/actions</url>
 	</ciManagement>
 
 	<repositories>
