@@ -36,45 +36,45 @@ import java.io.InputStream;
  */
 public class UnionResourceConnection extends ResourceConnection {
 
-	private final ResourceConnection wrapped;
+  private final ResourceConnection wrapped;
 
-	public UnionResourceConnection(UnionResource resource, ResourceConnection wrapped) {
-		super(resource);
-		this.wrapped = wrapped;
-	}
+  public UnionResourceConnection(UnionResource resource, ResourceConnection wrapped) {
+    super(resource);
+    this.wrapped = wrapped;
+  }
 
-	@Override
-	public UnionResource getResource() {
-		return (UnionResource)resource;
-	}
+  @Override
+  public UnionResource getResource() {
+    return (UnionResource)resource;
+  }
 
-	@Override
-	public boolean exists() throws IOException, IllegalStateException {
-		return wrapped.exists();
-	}
+  @Override
+  public boolean exists() throws IOException, IllegalStateException {
+    return wrapped.exists();
+  }
 
-	@Override
-	public long getLength() throws IOException, FileNotFoundException, IllegalStateException {
-		return wrapped.getLength();
-	}
+  @Override
+  public long getLength() throws IOException, FileNotFoundException, IllegalStateException {
+    return wrapped.getLength();
+  }
 
-	@Override
-	public long getLastModified() throws IOException, FileNotFoundException, IllegalStateException {
-		return wrapped.getLastModified();
-	}
+  @Override
+  public long getLastModified() throws IOException, FileNotFoundException, IllegalStateException {
+    return wrapped.getLastModified();
+  }
 
-	@Override
-	public InputStream getInputStream() throws IOException, FileNotFoundException, IllegalStateException {
-		return wrapped.getInputStream();
-	}
+  @Override
+  public InputStream getInputStream() throws IOException, FileNotFoundException, IllegalStateException {
+    return wrapped.getInputStream();
+  }
 
-	@Override
-	public File getFile() throws IOException, FileNotFoundException, IllegalStateException {
-		return wrapped.getFile();
-	}
+  @Override
+  public File getFile() throws IOException, FileNotFoundException, IllegalStateException {
+    return wrapped.getFile();
+  }
 
-	@Override
-	public void close() throws IOException {
-		wrapped.close();
-	}
+  @Override
+  public void close() throws IOException {
+    wrapped.close();
+  }
 }

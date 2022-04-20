@@ -38,89 +38,95 @@ import java.util.Map;
  */
 public class UnionResourceStore implements ResourceStore {
 
-	private static final Map<List<ResourceStore>, UnionResourceStore> unionStores = new HashMap<>();
+  private static final Map<List<ResourceStore>, UnionResourceStore> unionStores = new HashMap<>();
 
-	/**
-	 * Gets the union store representing the given set of stores, creating a new store only as-needed.
-	 * Only one {@link UnionResourceStore} is created per unique list of underlying stores.
-	 *
-	 * @param stores  A defensive copy is made
-	 */
-	public static UnionResourceStore getInstance(ResourceStore ... stores) {
-		return getInstance(new ArrayList<>(Arrays.asList(stores)));
-	}
+  /**
+   * Gets the union store representing the given set of stores, creating a new store only as-needed.
+   * Only one {@link UnionResourceStore} is created per unique list of underlying stores.
+   *
+   * @param stores  A defensive copy is made
+   */
+  public static UnionResourceStore getInstance(ResourceStore ... stores) {
+    return getInstance(new ArrayList<>(Arrays.asList(stores)));
+  }
 
-	/**
-	 * Gets the union store representing the given set of stores, creating a new store only as-needed.
-	 * Only one {@link UnionResourceStore} is created per unique list of underlying stores.
-	 *
-	 * @param stores  Iterated once only.
-	 */
-	public static UnionResourceStore getInstance(Iterable<ResourceStore> stores) {
-		List<ResourceStore> list = new ArrayList<>();
-		for(ResourceStore store : stores) {
-			list.add(store);
-		}
-		return getInstance(list);
-	}
+  /**
+   * Gets the union store representing the given set of stores, creating a new store only as-needed.
+   * Only one {@link UnionResourceStore} is created per unique list of underlying stores.
+   *
+   * @param stores  Iterated once only.
+   */
+  public static UnionResourceStore getInstance(Iterable<ResourceStore> stores) {
+    List<ResourceStore> list = new ArrayList<>();
+    for (ResourceStore store : stores) {
+      list.add(store);
+    }
+    return getInstance(list);
+  }
 
-	/**
-	 * Only one {@link UnionResourceStore} is created per unique list of underlying stores.
-	 */
-	private static UnionResourceStore getInstance(List<ResourceStore> stores) {
-		if(stores.isEmpty()) throw new IllegalArgumentException("At least one store required");
-		synchronized(unionStores) {
-			UnionResourceStore unionStore = unionStores.get(stores);
-			if(unionStore == null) {
-				unionStore = new UnionResourceStore(stores.toArray(new ResourceStore[stores.size()]));
-				unionStores.put(stores, unionStore);
-			}
-			return unionStore;
-		}
-	}
+  /**
+   * Only one {@link UnionResourceStore} is created per unique list of underlying stores.
+   */
+  private static UnionResourceStore getInstance(List<ResourceStore> stores) {
+    if (stores.isEmpty()) {
+      throw new IllegalArgumentException("At least one store required");
+    }
+    synchronized (unionStores) {
+      UnionResourceStore unionStore = unionStores.get(stores);
+      if (unionStore == null) {
+        unionStore = new UnionResourceStore(stores.toArray(new ResourceStore[stores.size()]));
+        unionStores.put(stores, unionStore);
+      }
+      return unionStore;
+    }
+  }
 
-	private final ResourceStore[] stores;
-	private final List<ResourceStore> unmodifiableStores;
+  private final ResourceStore[] stores;
+  private final List<ResourceStore> unmodifiableStores;
 
-	private UnionResourceStore(ResourceStore[] stores) {
-		this.stores = stores;
-		this.unmodifiableStores = AoCollections.optimalUnmodifiableList(Arrays.asList(stores));
-	}
+  private UnionResourceStore(ResourceStore[] stores) {
+    this.stores = stores;
+    this.unmodifiableStores = AoCollections.optimalUnmodifiableList(Arrays.asList(stores));
+  }
 
-	@SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
-	public List<ResourceStore> getStores() {
-		return unmodifiableStores;
-	}
+  @SuppressWarnings("ReturnOfCollectionOrArrayField") // Returning unmodifiable
+  public List<ResourceStore> getStores() {
+    return unmodifiableStores;
+  }
 
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("union(");
-		for(int i = 0; i < stores.length; i++) {
-			ResourceStore store = stores[i];
-			if(i > 0) sb.append(", ");
-			sb.append(store.toString());
-		}
-		return sb.append("):").toString();
-	}
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("union(");
+    for (int i = 0; i < stores.length; i++) {
+      ResourceStore store = stores[i];
+      if (i > 0) {
+        sb.append(", ");
+      }
+      sb.append(store.toString());
+    }
+    return sb.append("):").toString();
+  }
 
-	/**
-	 * Available when all stores are available.
-	 */
-	@Override
-	public boolean isAvailable() {
-		for(ResourceStore store : stores) {
-			if(!store.isAvailable()) return false;
-		}
-		return true;
-	}
+  /**
+   * Available when all stores are available.
+   */
+  @Override
+  public boolean isAvailable() {
+    for (ResourceStore store : stores) {
+      if (!store.isAvailable()) {
+        return false;
+      }
+    }
+    return true;
+  }
 
-	@Override
-	public UnionResource getResource(Path path) {
-		Resource[] resources = new Resource[stores.length];
-		for(int i = 0; i < stores.length; i++) {
-			resources[i] = stores[i].getResource(path);
-		}
-		return new UnionResource(this, path, resources);
-	}
+  @Override
+  public UnionResource getResource(Path path) {
+    Resource[] resources = new Resource[stores.length];
+    for (int i = 0; i < stores.length; i++) {
+      resources[i] = stores[i].getResource(path);
+    }
+    return new UnionResource(this, path, resources);
+  }
 }
