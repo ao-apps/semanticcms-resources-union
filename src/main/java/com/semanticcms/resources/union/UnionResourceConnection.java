@@ -45,7 +45,7 @@ public class UnionResourceConnection extends ResourceConnection {
 
   @Override
   public UnionResource getResource() {
-    return (UnionResource)resource;
+    return (UnionResource) resource;
   }
 
   @Override

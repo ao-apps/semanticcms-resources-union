@@ -69,7 +69,7 @@ public class UnionResource extends Resource {
 
   @Override
   public UnionResourceStore getStore() {
-    return (UnionResourceStore)store;
+    return (UnionResourceStore) store;
   }
 
   /**
