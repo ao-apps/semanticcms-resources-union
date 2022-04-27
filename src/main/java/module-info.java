@@ -26,4 +26,4 @@ module com.semanticcms.resources.union {
   requires com.aoapps.collections; // <groupId>com.aoapps</groupId><artifactId>ao-collections</artifactId>
   requires com.aoapps.net.types; // <groupId>com.aoapps</groupId><artifactId>ao-net-types</artifactId>
   requires com.semanticcms.core.resources; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-resources</artifactId>
-}
+} // TODO: Avoiding rewrite-maven-plugin-4.22.2 truncation
