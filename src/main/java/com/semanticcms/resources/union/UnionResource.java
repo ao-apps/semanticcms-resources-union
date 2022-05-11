@@ -57,6 +57,8 @@ public class UnionResource extends Resource {
   private volatile int lastExistsIndex;
 
   /**
+   * Creates a new combined resource.
+   *
    * @param store  A defensive copy is made
    */
   public UnionResource(UnionResourceStore store, Path path, Resource[] resources) {
