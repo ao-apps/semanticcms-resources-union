@@ -46,7 +46,7 @@ along with semanticcms-resources-union.  If not, see <https://www.gnu.org/licens
     <sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
   </properties>
 
-  <name>SemanticCMS Resources Union²</name>
+  <name>SemanticCMS Resources Union</name>
   <url>https://semanticcms.com/resources/union/</url>
   <description>Combines multiple sets of SemanticCMS resources.</description>
   <inceptionYear>2017</inceptionYear>
