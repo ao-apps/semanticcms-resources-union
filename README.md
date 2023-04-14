@@ -22,7 +22,7 @@ Combines multiple sets of [SemanticCMS resources](https://github.com/ao-apps/sem
 * [Project Home](https://semanticcms.com/resources/union/)
 * [Changelog](https://semanticcms.com/resources/union/changelog)
 * [API Docs](https://semanticcms.com/resources/union/apidocs/)
-* [Maven Central Repository](https://central.sonatype.com/search?namespace=com.semanticcms&q=a%3Asemanticcms-resources-union)
+* [Maven Central Repository](https://central.sonatype.com/artifact/com.semanticcms/semanticcms-resources-union)
 * [GitHub](https://github.com/ao-apps/semanticcms-resources-union)
 
 ## Contact Us
