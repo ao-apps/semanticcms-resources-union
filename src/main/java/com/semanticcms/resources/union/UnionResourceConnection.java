@@ -1,6 +1,6 @@
 /*
  * semanticcms-resources-union - Combines multiple sets of SemanticCMS resources.
- * Copyright (C) 2017, 2022  AO Industries, Inc.
+ * Copyright (C) 2017, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -38,6 +38,9 @@ public class UnionResourceConnection extends ResourceConnection {
 
   private final ResourceConnection wrapped;
 
+  /**
+   * Creates a new {@link UnionResourceConnection}.
+   */
   public UnionResourceConnection(UnionResource resource, ResourceConnection wrapped) {
     super(resource);
     this.wrapped = wrapped;
