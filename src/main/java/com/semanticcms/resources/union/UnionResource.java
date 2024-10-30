@@ -1,6 +1,6 @@
 /*
  * semanticcms-resources-union - Combines multiple sets of SemanticCMS resources.
- * Copyright (C) 2017, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2017, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -32,19 +32,17 @@ import java.util.Arrays;
 
 /**
  * Combines multiple {@link Resource resources} into a single resource.
- * <p>
- * TODO: Future versions could be more complicated than this current sequential scan.
+ *
+ * <p>TODO: Future versions could be more complicated than this current sequential scan.
  * A map could be kept of which underlying stores each path is found in, and requests
  * could be round-robin distributed between then when the resource is found in multiple
  * underlying stores.  There are probably other complexities that could be added, but
  * this super simple implementation suffices, even though it relies on a high performance
- * implementation of the underlying implementations {@link Resource#exists()}.
- * </p>
- * <p>
- * TODO: Future versions could also automatically switch to the next copy when an error occurs.
+ * implementation of the underlying implementations {@link Resource#exists()}.</p>
+ *
+ * <p>TODO: Future versions could also automatically switch to the next copy when an error occurs.
  * This could help mask underlying I/O issues.  But perhaps this is best handled by a resource store
- * dedicated to this purpose?
- * </p>
+ * dedicated to this purpose?</p>
  */
 public class UnionResource extends Resource {
 
@@ -78,9 +76,8 @@ public class UnionResource extends Resource {
    * Returns {@link #isFilePreferred()} from a resource that {@link #exists()}.
    * If no resource exists, returns {@link #isFilePreferred()} from the last resource where did exist,
    * or the first resource if never found.
-   * <p>
-   * TODO: This should be made consistent with implementation of {@link #getFile()} below.
-   * </p>
+   *
+   * <p>TODO: This should be made consistent with implementation of {@link #getFile()} below.</p>
    */
   @Override
   public boolean isFilePreferred() throws IOException {
@@ -138,9 +135,8 @@ public class UnionResource extends Resource {
    * Returns {@link #open()} from a resource that {@link #exists()}.
    * If no resource exists, returns {@link #open()} from the last resource where did exist,
    * or the first resource if never found.
-   * <p>
-   * TODO: Have an affinity for local-file resources like done in {@link #getFile()}?
-   * </p>
+   *
+   * <p>TODO: Have an affinity for local-file resources like done in {@link #getFile()}?</p>
    */
   @Override
   public UnionResourceConnection open() throws IOException {
