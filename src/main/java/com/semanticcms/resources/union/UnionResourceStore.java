@@ -46,7 +46,7 @@ public class UnionResourceStore implements ResourceStore {
    *
    * @param stores  A defensive copy is made
    */
-  public static UnionResourceStore getInstance(ResourceStore ... stores) {
+  public static UnionResourceStore getInstance(ResourceStore... stores) {
     return getInstance(new ArrayList<>(Arrays.asList(stores)));
   }
 
