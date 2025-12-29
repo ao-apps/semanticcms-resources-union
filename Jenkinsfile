@@ -33,6 +33,10 @@ def upstreamProjects = [
   '../core/resources', // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-resources</artifactId>
 ]
 
+// Java 17
+def buildJdks = ['17', '21'] // Changes must be copied to matrix axes!
+def testJdks = ['17', '21'] // Changes must be copied to matrix axes!
+
 /******************************************************************************************
  *                                                                                        *
  * Everything below this line is identical for all projects, except the copied matrix     *
@@ -843,7 +847,7 @@ or any build that adds or removes build artifacts."""
         axes {
           axis {
             name 'jdk'
-            values '11', '17', '21' // buildJdks
+            values '17', '21' // buildJdks
           }
         }
         stages {
@@ -903,11 +907,11 @@ or any build that adds or removes build artifacts."""
         axes {
           axis {
             name 'jdk'
-            values '11', '17', '21' // buildJdks
+            values '17', '21' // buildJdks
           }
           axis {
             name 'testJdk'
-            values '11', '17', '21' // testJdks
+            values '17', '21' // testJdks
           }
         }
         stages {
