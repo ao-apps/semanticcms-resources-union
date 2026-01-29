@@ -73,11 +73,11 @@ public class UnionResource extends Resource {
   }
 
   /**
-   * Returns {@link #isFilePreferred()} from a resource that {@link #exists()}.
-   * If no resource exists, returns {@link #isFilePreferred()} from the last resource where did exist,
+   * Returns {@link UnionResource#isFilePreferred()} from a resource that {@link UnionResource#exists()}.
+   * If no resource exists, returns {@link UnionResource#isFilePreferred()} from the last resource where did exist,
    * or the first resource if never found.
    *
-   * <p>TODO: This should be made consistent with implementation of {@link #getFile()} below.</p>
+   * <p>TODO: This should be made consistent with implementation of {@link UnionResource#getFile()} below.</p>
    */
   @Override
   public boolean isFilePreferred() throws IOException {
@@ -96,9 +96,9 @@ public class UnionResource extends Resource {
   }
 
   /**
-   * Returns {@link #getFile()} from a resource that {@link #exists()} and returns non-null from {@link #getFile()}.
-   * If doesn't exist on any resource, returns the first non-null result of {@link #getFile()} in
-   * order of {@link #resources}.
+   * Returns {@link UnionResource#getFile()} from a resource that {@link UnionResource#exists()} and returns non-null from {@link UnionResource#getFile()}.
+   * If doesn't exist on any resource, returns the first non-null result of {@link UnionResource#getFile()} in
+   * order of {@link UnionResource#resources}.
    * Finally returns {@code null} if no non-null results found.
    */
   @Override
@@ -132,11 +132,11 @@ public class UnionResource extends Resource {
   }
 
   /**
-   * Returns {@link #open()} from a resource that {@link #exists()}.
-   * If no resource exists, returns {@link #open()} from the last resource where did exist,
+   * Returns {@link UnionResource#open()} from a resource that {@link UnionResource#exists()}.
+   * If no resource exists, returns {@link UnionResource#open()} from the last resource where did exist,
    * or the first resource if never found.
    *
-   * <p>TODO: Have an affinity for local-file resources like done in {@link #getFile()}?</p>
+   * <p>TODO: Have an affinity for local-file resources like done in {@link UnionResource#getFile()}?</p>
    */
   @Override
   public UnionResourceConnection open() throws IOException {
